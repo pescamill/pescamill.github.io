@@ -6,6 +6,7 @@
 <title>Pablo Escamilla · Proyectos</title>
 <meta name="description" content="Amoxcalli, Pleno y Procedencia: proyectos abiertos de Pablo Escamilla sobre México.">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#812d37">
 <style>
   :root {
     --papel: #f4efe4;
@@ -13,7 +14,10 @@
     --tinta: #1d1916;
     --tenue: #5e554c;
     --linea: #d9cfbd;
-    --acento: #812d37;
+    --guinda: #812d37;
+    --jade: #2b6f6b;
+    --ocre: #a5671b;
+    --oro: #c8963e;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -22,7 +26,10 @@
       --tinta: #ece5d8;
       --tenue: #a99f91;
       --linea: #3a332c;
-      --acento: #d98a92;
+      --guinda: #d98a92;
+      --jade: #6cc1b9;
+      --ocre: #e0a85a;
+      --oro: #d9ad5f;
     }
   }
   * { box-sizing: border-box; }
@@ -33,7 +40,14 @@
     font-family: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
     line-height: 1.5;
   }
-  main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
+  .greca {
+    height: 14px;
+    background:
+      linear-gradient(90deg, var(--guinda) 0 33.3%, var(--oro) 33.3% 66.6%, var(--jade) 66.6%);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M0 14V0h14v10H6V6h4V4H4v10zM14 14V4h10V0h4v14z'/%3E%3C/svg%3E") repeat-x;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M0 14V0h14v10H6V6h4V4H4v10zM14 14V4h10V0h4v14z'/%3E%3C/svg%3E") repeat-x;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 3.5rem 1rem 3rem; }
   h1 {
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
     font-weight: normal;
@@ -43,59 +57,95 @@
   .lema { color: var(--tenue); margin: 0 0 2.5rem; }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
   a.app {
-    display: block;
+    --c: var(--guinda);
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
     padding: 1.25rem 1.4rem;
-    background: var(--tarjeta);
-    border: 1px solid var(--linea);
-    border-left: 4px solid var(--acento);
+    background: color-mix(in srgb, var(--c) 7%, var(--tarjeta));
+    border: 1px solid color-mix(in srgb, var(--c) 30%, var(--linea));
+    border-left: 5px solid var(--c);
     border-radius: 4px;
     color: inherit;
     text-decoration: none;
     transition: border-color .15s, transform .15s;
   }
-  a.app:hover, a.app:focus-visible { border-color: var(--acento); transform: translateY(-1px); }
-  a.app:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+  a.app.jade { --c: var(--jade); }
+  a.app.ocre { --c: var(--ocre); }
+  a.app:hover, a.app:focus-visible { border-color: var(--c); transform: translateY(-1px); }
+  a.app:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+  .glifo {
+    flex: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 45%, transparent);
+  }
+  .glifo svg { display: block; width: 100%; height: 100%; }
   h2 {
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
     font-weight: normal;
     font-size: 1.5rem;
+    line-height: 1.2;
     margin: 0;
-    color: var(--acento);
+    color: var(--c);
   }
   .app p { margin: .3rem 0 .6rem; }
   .url { font-size: .85rem; color: var(--tenue); word-break: break-all; }
   footer { margin-top: 3rem; font-size: .85rem; color: var(--tenue); }
-  footer a { color: var(--acento); }
+  footer a { color: var(--guinda); }
+  @media (max-width: 30rem) {
+    a.app { padding: 1rem; gap: .85rem; }
+    .glifo { width: 2.75rem; height: 2.75rem; }
+  }
 </style>
 </head>
 <body>
+<div class="greca" aria-hidden="true"></div>
 <main>
   <h1>Pablo Escamilla</h1>
   <p class="lema">Proyectos abiertos sobre México: su lengua, su poder público y lo que ha dado al mundo.</p>
   <ul>
     <li>
-      <a class="app" href="https://pescamill.github.io/amoxcalli/">
-        <h2>Amoxcalli</h2>
-        <p>Aprende a leer náhuatl clásico con lecturas guiadas, diccionario y pasajes con fuente.</p>
-        <span class="url">pescamill.github.io/amoxcalli</span>
+      <a class="app jade" href="https://pescamill.github.io/amoxcalli/">
+        <span class="glifo" aria-hidden="true"><!-- calli (casa) con un amoxtli (códice plegado) en la puerta -->
+          <svg viewBox="0 0 64 64"><rect width="64" height="64" fill="#f4efe4"/><path d="M14 9h36l5 7H9z" fill="#1d1916"/><rect x="9" y="16" width="46" height="9" fill="#812d37"/><g fill="#f4efe4"><circle cx="15" cy="20.5" r="2.2"/><circle cx="23.5" cy="20.5" r="2.2"/><circle cx="32" cy="20.5" r="2.2"/><circle cx="40.5" cy="20.5" r="2.2"/><circle cx="49" cy="20.5" r="2.2"/></g><rect x="13" y="25" width="38" height="29" fill="#c8963e"/><rect x="21" y="31" width="22" height="23" fill="#1d1916"/><path d="M24 39l4-3v12l-4 3z" fill="#f4efe4"/><path d="M28 36l4 3v12l-4-3z" fill="#d7c7a5"/><path d="M32 39l4-3v12l-4 3z" fill="#f4efe4"/><path d="M36 36l4 3v12l-4-3z" fill="#d7c7a5"/><path d="M25 42l2-1.5M33 42l2-1.5" stroke="#812d37" stroke-width="1.4"/><path d="M25 46l2-1.5M33 46l2-1.5" stroke="#2b6f6b" stroke-width="1.4"/><rect x="9" y="54" width="46" height="4" fill="#1d1916"/></svg>
+        </span>
+        <div>
+          <h2>Amoxcalli</h2>
+          <p>Aprende a leer náhuatl clásico con lecturas guiadas, diccionario y pasajes con fuente.</p>
+          <span class="url">pescamill.github.io/amoxcalli</span>
+        </div>
       </a>
     </li>
     <li>
       <a class="app" href="https://pescamill.github.io/pleno/">
-        <h2>Pleno</h2>
-        <p>¿Lo dijo? ¿Lo votó? Lo que se dice en el poder público de México, buscable y con fuente oficial.</p>
-        <span class="url">pescamill.github.io/pleno</span>
+        <span class="glifo" aria-hidden="true"><!-- vírgula de la palabra: la voluta que sale de la boca en los códices -->
+          <svg viewBox="0 0 64 64"><rect width="64" height="64" fill="#812d37"/><path d="M12 50C12 30 22 14 38 14c10 0 16 7 16 15 0 8-6 13-12 13-5 0-9-4-9-8 0-4 3-6 6-6 2.5 0 4 1.5 4 3.5" fill="none" stroke="#f4efe4" stroke-width="5" stroke-linecap="round"/><circle cx="20" cy="27" r="2.6" fill="#c8963e"/><circle cx="26" cy="20" r="2.6" fill="#c8963e"/></svg>
+        </span>
+        <div>
+          <h2>Pleno</h2>
+          <p>¿Lo dijo? ¿Lo votó? Lo que se dice en el poder público de México, buscable y con fuente oficial.</p>
+          <span class="url">pescamill.github.io/pleno</span>
+        </div>
       </a>
     </li>
     <li>
-      <a class="app" href="https://pescamill.github.io/procedencia/">
-        <h2>Procedencia</h2>
-        <p>Lo que el mundo recibió de México y de sus pueblos originarios, con fuentes comprobadas.</p>
-        <span class="url">pescamill.github.io/procedencia</span>
+      <a class="app ocre" href="https://pescamill.github.io/procedencia/">
+        <span class="glifo" aria-hidden="true"><!-- huellas de camino, como en la Tira de la Peregrinación -->
+          <svg viewBox="0 0 64 64"><rect width="64" height="64" fill="#a5671b"/><g fill="#1d1916"><g transform="rotate(-30 20 44)"><ellipse cx="20" cy="46" rx="4.5" ry="8"/><circle cx="16.5" cy="35.5" r="1.6"/><circle cx="19.5" cy="34.3" r="1.6"/><circle cx="22.7" cy="34.8" r="1.6"/><circle cx="25" cy="36.8" r="1.4"/></g><g transform="rotate(-30 42 22)"><ellipse cx="42" cy="24" rx="4.5" ry="8"/><circle cx="38.5" cy="13.5" r="1.6"/><circle cx="41.5" cy="12.3" r="1.6"/><circle cx="44.7" cy="12.8" r="1.6"/><circle cx="47" cy="14.8" r="1.4"/></g></g><path d="M8 58q24-2 48-50" fill="none" stroke="#f4efe4" stroke-width="1.6" stroke-dasharray="2 4" opacity=".7"/></svg>
+        </span>
+        <div>
+          <h2>Procedencia</h2>
+          <p>Lo que el mundo recibió de México y de sus pueblos originarios, con fuentes comprobadas.</p>
+          <span class="url">pescamill.github.io/procedencia</span>
+        </div>
       </a>
     </li>
   </ul>
   <footer>Código en <a href="https://github.com/pescamill">github.com/pescamill</a></footer>
 </main>
+<div class="greca" aria-hidden="true"></div>
 </body>
 </html>
