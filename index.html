@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pablo Escamilla · Proyectos</title>
+<meta name="description" content="Amoxcalli, Pleno y Procedencia: proyectos abiertos de Pablo Escamilla sobre México.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --papel: #f4efe4;
+    --tarjeta: #fbf8f1;
+    --tinta: #1d1916;
+    --tenue: #5e554c;
+    --linea: #d9cfbd;
+    --acento: #812d37;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --papel: #1a1714;
+      --tarjeta: #24201c;
+      --tinta: #ece5d8;
+      --tenue: #a99f91;
+      --linea: #3a332c;
+      --acento: #d98a92;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
+  h1 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-weight: normal;
+    font-size: 2.2rem;
+    margin: 0 0 .25rem;
+  }
+  .lema { color: var(--tenue); margin: 0 0 2.5rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  a.app {
+    display: block;
+    padding: 1.25rem 1.4rem;
+    background: var(--tarjeta);
+    border: 1px solid var(--linea);
+    border-left: 4px solid var(--acento);
+    border-radius: 4px;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .15s, transform .15s;
+  }
+  a.app:hover, a.app:focus-visible { border-color: var(--acento); transform: translateY(-1px); }
+  a.app:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+  h2 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--acento);
+  }
+  .app p { margin: .3rem 0 .6rem; }
+  .url { font-size: .85rem; color: var(--tenue); word-break: break-all; }
+  footer { margin-top: 3rem; font-size: .85rem; color: var(--tenue); }
+  footer a { color: var(--acento); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pablo Escamilla</h1>
+  <p class="lema">Proyectos abiertos sobre México: su lengua, su poder público y lo que ha dado al mundo.</p>
+  <ul>
+    <li>
+      <a class="app" href="https://pescamill.github.io/amoxcalli/">
+        <h2>Amoxcalli</h2>
+        <p>Aprende a leer náhuatl clásico con lecturas guiadas, diccionario y pasajes con fuente.</p>
+        <span class="url">pescamill.github.io/amoxcalli</span>
+      </a>
+    </li>
+    <li>
+      <a class="app" href="https://pescamill.github.io/pleno/">
+        <h2>Pleno</h2>
+        <p>¿Lo dijo? ¿Lo votó? Lo que se dice en el poder público de México, buscable y con fuente oficial.</p>
+        <span class="url">pescamill.github.io/pleno</span>
+      </a>
+    </li>
+    <li>
+      <a class="app" href="https://pescamill.github.io/procedencia/">
+        <h2>Procedencia</h2>
+        <p>Lo que el mundo recibió de México y de sus pueblos originarios, con fuentes comprobadas.</p>
+        <span class="url">pescamill.github.io/procedencia</span>
+      </a>
+    </li>
+  </ul>
+  <footer>Código en <a href="https://github.com/pescamill">github.com/pescamill</a></footer>
+</main>
+</body>
+</html>
